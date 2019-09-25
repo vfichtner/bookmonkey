@@ -5,7 +5,8 @@ USER root
 RUN sudo apt-get update \
  && sudo apt-get install -y \
     node \
- && sudo rm -rf /var/lib/apt/lists/*
+ && sudo rm -rf /var/lib/apt/lists/* \
+ && sudo npm install @angular/cli
 
 
 # Install custom tools, runtime, etc. using apt-get
