@@ -5,9 +5,9 @@ USER root
 RUN sudo apt-get update \
  && sudo apt-get install -y \
     node \
- && sudo rm -rf /var/lib/apt/lists/* \
- && sudo npm install @angular/cli
+ && sudo rm -rf /var/lib/apt/lists/*
 
+RUN npm install @angular/cli
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
