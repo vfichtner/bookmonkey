@@ -7,6 +7,8 @@ RUN sudo apt-get update \
     node \
  && sudo rm -rf /var/lib/apt/lists/*
 
+USER gitpod
+
 RUN npm install @angular/cli
 
 # Install custom tools, runtime, etc. using apt-get
