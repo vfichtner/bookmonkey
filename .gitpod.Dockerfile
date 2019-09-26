@@ -3,13 +3,9 @@ FROM gitpod/workspace-full
 USER root
 
 RUN sudo apt-get update \
- && sudo apt-get install -y \
-    node \
  && sudo rm -rf /var/lib/apt/lists/*
 
 USER gitpod
-
-RUN npm install @angular/cli
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
