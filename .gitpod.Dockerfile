@@ -7,11 +7,7 @@ RUN sudo apt-get update \
 
 USER gitpod
 
-<<<<<<< HEAD
-RUN npm install @angular/cli
-=======
 RUN npm install -g @angular/cli
->>>>>>> gitpod_conf
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
