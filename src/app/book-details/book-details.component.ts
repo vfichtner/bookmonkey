@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Book } from '../shared/book';
+import { ActivatedRoute } from '@angular/router';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'bm-book-details',
@@ -8,17 +10,14 @@ import { Book } from '../shared/book';
 })
 export class BookDetailsComponent implements OnInit {
 
-  @Input()
   book: Book;
 
-  @Output() showListEvent = new EventEmitter<any>();
-
-
-  showList(){
-    this.showListEvent.emit();
+  constructor(private route: ActivatedRoute, private bs: BookStoreService){
   }
 
   ngOnInit() {
+    const params = this.route.snapshot.paramMap;
+    this.book = this.bs.getSingle(params.get('isbn'));
   }
 
 }
